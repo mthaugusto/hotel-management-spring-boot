@@ -10,6 +10,6 @@ public record HotelRequest(
 
         String descricao,
 
-        double avaliacao
+        Double avaliacao
 ) {
 }

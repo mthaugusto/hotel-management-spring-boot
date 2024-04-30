@@ -30,6 +30,6 @@ public class Hotel {
     private String descricao;
 
     @Column(name="AVALIACAO_HOTEL")
-    private double avaliacao;
+    private Double avaliacao;
 
 }
