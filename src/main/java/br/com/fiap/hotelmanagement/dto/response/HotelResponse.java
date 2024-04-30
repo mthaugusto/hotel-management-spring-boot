@@ -13,6 +13,6 @@ public record HotelResponse(
 
         String descricao,
 
-        double avaliacao
+        Double avaliacao
 ) {
 }
