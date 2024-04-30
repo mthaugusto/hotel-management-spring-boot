@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.List;
 
@@ -76,7 +77,14 @@ public class HotelResource {
         var entity = service.toEntity(r);
         var salvo = service.save(entity);
         var resposta = service.toResponse(salvo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(resposta);
+
+        var uri = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(salvo.getId())
+                .toUri();
+
+        return ResponseEntity.created(uri).body(resposta);
 
     }
 
