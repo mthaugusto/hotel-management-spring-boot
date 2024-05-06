@@ -1,5 +1,6 @@
 package br.com.fiap.hotelmanagement.dto.response;
 
+import br.com.fiap.hotelmanagement.entity.Hotel;
 import br.com.fiap.hotelmanagement.entity.TipoQuarto;
 import lombok.Builder;
 
@@ -13,6 +14,6 @@ public record QuartoResponse(
 
         TipoQuarto tipoQuarto,
 
-        Long hotelId
+        HotelResponse hotel
 ) {
 }
